@@ -38,4 +38,4 @@ Well, we do have data scientists and integration specialist here, so I will prob
 
 ## Acknowledgments
 
-Thanks the Elements of AI Team for the knowledge and inspiration. Keep up the good work!
+Thanks for the Elements of AI Team for the knowledge and inspiration. Keep up the good work!
