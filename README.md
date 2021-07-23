@@ -1,4 +1,4 @@
-# Calculating IT support ticket urgency based on words used in description 
+# Calculating IT support ticket urgency based on words used in description
 
 Final project for the Building AI course
 
@@ -18,7 +18,7 @@ Process could go something like this:
 - Poll database/API for new tickets with no classification or handler
 - Use relevant method with Python to classify words  to "urgent" and "non-urgent" categories. If there are more "urgent" words than "non-urgent" words, then ticket is classified as "urgent" and vice versa.
 
-Users are IT support system admins and IT support personnel. Their need is to get the information about a potential urgent ticket as soon as possible (this has always been a problem), especialy since most of the ticket are NOT logged by the support personel, but rather by customers.
+Users are IT support system admins and IT support personnel. Their need is to get the information about a potential urgent ticket as soon as possible (this has always been a problem), especialy since most of the ticket are NOT logged by the support personnel, but rather by customers.
 
 ## Data sources and AI methods
 
