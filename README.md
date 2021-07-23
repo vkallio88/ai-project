@@ -1,4 +1,4 @@
-# Calculating IT support ticket urgency and based on words used in description 
+# Calculating IT support ticket urgency based on words used in description 
 
 Final project for the Building AI course
 
