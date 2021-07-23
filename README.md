@@ -1,75 +1,41 @@
-# Project Title
+# Calculating IT support ticket urgency and based on words used in description 
 
 Final project for the Building AI course
 
 ## Summary
 
-Describe briefly in 2-3 sentences what your project is about. About 250 characters is a nice length! 
+This is a pretty simple idea and someone has probably done something like this, but here goes. The idea is to gather information about a new IT support ticket, which is not in progress yet and use algorithm/algorithms to estimate the urgency of a ticket based on words used in the Description section of the support ticket.
 
 
 ## Background
 
-Which problems does your idea solve? How common or frequent is this problem? What is your personal motivation? Why is this topic important or interesting?
-
-This is how you make a list, if you need one:
-* problem 1
-* problem 2
-* etc.
+In our IT department, it is sometimes hard to know which support tickets are urgent and which are not, especially during rush hours. The thing we have realised is that we can usually (but not always) predict the urgency of a ticket based on words used in the Description. Sure, predictions will not be 100% accurate, but that is not a problem. Biggest problem at the moment is the fact that urgent cases tend to pile up in the system. This hopefully helps to draw attention to these urgent cases.
 
 
 ## How is it used?
 
-Describe the process of using the solution. In what kind situations is the solution needed (environment, time, etc.)? Who are the users, what kinds of needs should be taken into account?
+Process could go something like this:
+- Poll database/API for new tickets with no classification or handler
+- Use relevant method with Python to classify words  to "urgent" and "non-urgent" categories. If there are more "urgent" words than "non-urgent" words, then ticket is classified as "urgent" and vice versa.
 
-Images will make your README look nice!
-Once you upload an image to your repository, you can link link to it like this (replace the URL with file path, if you've uploaded an image to Github.)
-![Cat](https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg)
-
-If you need to resize images, you have to use an HTML tag, like this:
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg" width="300">
-
-This is how you create code examples:
-```
-def main():
-   countries = ['Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden']
-   pop = [5615000, 5439000, 324000, 5080000, 9609000]   # not actually needed in this exercise...
-   fishers = [1891, 2652, 3800, 11611, 1757]
-
-   totPop = sum(pop)
-   totFish = sum(fishers)
-
-   # write your solution here
-
-   for i in range(len(countries)):
-      print("%s %.2f%%" % (countries[i], 100.0))    # current just prints 100%
-
-main()
-```
-
+Users are IT support system admins and IT support personnel. Their need is to get the information about a potential urgent ticket as soon as possible (this has always been a problem), especialy since most of the ticket are NOT logged by the support personel, but rather by customers.
 
 ## Data sources and AI methods
-Where does your data come from? Do you collect it yourself or do you use data collected by someone else?
-If you need to use links, here's an example:
-[Twitter API](https://developer.twitter.com/en/docs)
 
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+Our integration specialists will collect the ticket data from system via API call or database query. So the data is gathered from IT ticket system, and actually, this kind of ticket data is already gathered, we just do not use it that efficiently.
+
+Since this is a pretty simple case with words, maybe Naive Bayes classifier could be used as a starting point. Maybe later, when expanding the solution to do more classifications and forecasts with words could the Term Frequency Inverse Document Frequency (tf-idf) technique be used. This could be the ultimate technique of choice for this, since we could use older/earlier tickets as a training data for the algorithm. As you can see, I am not a programmer, so this description is pretty vague.
 
 ## Challenges
 
-What does your project _not_ solve? Which limitations and ethical considerations should be taken into account when deploying a solution like this?
+I suppose the biggest limitation is the data. If the description are short and off-point, then this all amounts to nothing. So, there should be some kind of a template when submitting a ticket, just to make sure all the relevant information is (forcefully) gathered. Nevertheless, problems and inconsistencies with data will most likely still occur.
+
+This project only tries to solve this very spesific problem and really nothing else. This is my first crack at trying to understand the subject matter, so bear with me.
 
 ## What next?
 
-How could your project grow and become something even more? What kind of skills, what kind of assistance would you  need to move on? 
-
+Well, we do have data scientists and integration specialist here, so I will probably seek their help with this and hopefully understand the whole process a lot better. This is not probably a very hard project for a data scientist and/or a integration specialist.
 
 ## Acknowledgments
 
-* list here the sources of inspiration 
-* do not use code, images, data etc. from others without permission
-* when you have permission to use other people's materials, always mention the original creator and the open source / Creative Commons licence they've used
-  <br>For example: [Sleeping Cat on Her Back by Umberto Salvagnin](https://commons.wikimedia.org/wiki/File:Sleeping_cat_on_her_back.jpg#filelinks) / [CC BY 2.0](https://creativecommons.org/licenses/by/2.0)
-* etc
+Thanks the Elements of AI Team for the knowledge and inspiration. Keep up the good work!
